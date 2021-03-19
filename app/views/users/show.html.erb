@@ -1,0 +1,22 @@
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @user.zip %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Introduce:</strong>
+  <%= @user.introduce %>
+</p>
+
+<%= link_to 'edit', edit_user_registration_path %> |
+<%= link_to 'back', users_path %>

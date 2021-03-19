@@ -1,0 +1,34 @@
+<h1>Users</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>email</th>
+    <th>zip</th>
+    <th>address</th>
+    <th>introduce</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td><%= user.zip %></td>
+      <td><%= user.address %></td>
+      <td><%= user.introduce %></td>
+      <td><%= link_to 'show', user %></td>
+      <td><%= link_to 'edit', edit_user_registration_path %></td>
+      <td><%= link_to 'destroy', user_registration_path, method: :delete, data: { confirm: t(:delete_btn) }
+      %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>
+
+<br>
