@@ -1,6 +1,5 @@
-<% provide(:btn_text, t(:new_btn)) %>
 <h1><%= t :new_title %></h1>
 
-<%= render 'form', book: @book %>
+<%= render partial: 'form', locals: {book: @book, btn_text: t(:new_btn)} %>
 
 <%= link_to t(:back), books_path %>

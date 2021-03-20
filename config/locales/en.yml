@@ -1,20 +1,23 @@
 en:
-  title: "Title"
-  memo: "Memo"
-  author: "Author"
-  picture: "picture"
+  activerecord:
+    models:
+      book: "Books"
+    attributes:
+      book:
+        title: "Title"
+        memo: "Memo"
+        author: "Author"
+        picture: "picture"
   show: "Show"
   edit: "Edit"
   back: "Back"
   destroy: "Destroy"
   new_book: "New Book"
-  books_title: "Books"
   new_title: "New Book"
   editing_title: "Editing Book"
   new_btn: "Add new Book"
   update_btn: "Update Book"
-  delete_btn: "Are you sure?"
-  suc_msg: "Book was successfully created."
-  update_suc_msg: "Book was successfully updated."
-  del_suc_msg: "Book was successfully destroyed."
-  unprocessable_entity: "unprocessable_entity"
+  delete_confirmation_message: "Are you sure?"
+  create_success_message: "Book was successfully created."
+  update_success_massage: "Book was successfully updated."
+  destroy_success_message: "Book was successfully destroyed."
