@@ -1,0 +1,6 @@
+<h1>Welcome</h1>
+<% if user_signed_in? %>
+  <p><%= link_to 'Books', books_path %> | <%= link_to 'Users', users_path %></p>
+<% else %>
+  <p>Please sign up or log in.</p>
+<% end %>
