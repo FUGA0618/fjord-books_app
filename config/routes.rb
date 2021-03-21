@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  scope "/:locale" do
+  scope "(:locale)" do
     resources :books
   end
 end
