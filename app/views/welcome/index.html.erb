@@ -1,6 +1,6 @@
-<h1>Welcome</h1>
+<h1><%= t('title.welcome') %></h1>
 <% if user_signed_in? %>
-  <p><%= link_to 'Books', books_path %> | <%= link_to 'Users', users_path %></p>
+  <p><%= link_to Book.model_name.human, books_path %> | <%= link_to User.model_name.human, users_path %></p>
 <% else %>
-  <p>Please sign up or log in.</p>
+  <p><%= t('message.welcome') %></p>
 <% end %>
