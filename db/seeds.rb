@@ -11,8 +11,9 @@ def picture_file(name)
 end
 
 Book.destroy_all
+User.destroy_all
 
-70.times do |n|
+50.times do |n|
   Book.create!(
     title: "Ruby超入門 #{n}",
     memo: 'Rubyの文法の基本をやさしくていねいに解説しています。',
@@ -32,6 +33,17 @@ Book.destroy_all
     memo: '実在する帳票から本当に使えるテーブル設計を導く画期的な本！',
     author: '羽生 章洋',
     picture: picture_file('erd.jpg')
+  )
+end
+
+100.times do |n|
+  User.create!(
+    email: "sample-#{n}@example.com",
+    zip: 1_234_567,
+    address: "東京都豊島区北池袋#{n}丁目#{n}番#{n}号",
+    introduce: "#{n}回目の登録です。よろしくお願いします！",
+    password: 'password',
+    password_confirmation: 'password'
   )
 end
 
