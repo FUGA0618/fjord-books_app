@@ -17,7 +17,7 @@
     <tr>
       <td><%= user.id %></td>
       <td><%= user.email %></td>
-      <td><%= user.zip %></td>
+      <td><%= split_and_display_zip(user.zip) %></td>
       <td><%= user.address %></td>
       <td><%= user.introduce %></td>
       <td><%= link_to t('views.common.show'), user %></td>
