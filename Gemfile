@@ -39,6 +39,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'faker'
   gem 'i18n_generators'
   gem 'letter_opener_web', '~> 1.0'
   gem 'listen', '~> 3.3'
@@ -61,3 +62,4 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'carrierwave'
+gem 'kaminari'
