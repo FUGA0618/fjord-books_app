@@ -5,4 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  validates :zip, numericality: { only_integer: true }, length: { is: 7 }, allow_nil: true
+  validates :address, length: { maximum: 255 }
+  validates :introduce, length: { maximum: 255 }
 end
