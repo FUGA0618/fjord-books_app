@@ -27,7 +27,7 @@ ja:
         updated_at: 更新日
         zip: 郵便番号
         address: 住所
-        introduce: 自己紹介文
+        introduction: 自己紹介文
     models:
       user: ユーザー
   users:

@@ -27,7 +27,7 @@ en:
         updated_at: Updated at
         zip: Zip
         address: Address
-        introduce: Introduce
+        introduction: Introduce
     models:
       user:
         one: User
