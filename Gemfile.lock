@@ -290,6 +290,7 @@ DEPENDENCIES
   carrierwave
   devise
   devise-i18n
+  faker
   i18n_generators
   jbuilder (~> 2.7)
   kaminari
