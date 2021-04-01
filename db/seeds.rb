@@ -41,7 +41,7 @@ end
     email: "sample-#{n}@example.com",
     zip: 1_234_567,
     address: "東京都豊島区北池袋#{n}丁目#{n}番#{n}号",
-    introduce: "#{n}回目の登録です。よろしくお願いします！",
+    introduction: "#{n}回目の登録です。よろしくお願いします！",
     password: 'password',
     password_confirmation: 'password'
   )
