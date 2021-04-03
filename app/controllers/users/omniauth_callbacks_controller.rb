@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Users::OmniauthCallbacksController < Devise::OmniauthCallBacksController
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   skip_before_action :verify_authenticity_token, only: :github
 
   def github
