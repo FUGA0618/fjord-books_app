@@ -1,0 +1,21 @@
+<p>
+  <strong><%= User.human_attribute_name('email')%>:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name('zip')%>:</strong>
+  <%= split_and_display_zip(@user.zip) %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name('address')%>:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong><%= User.human_attribute_name('introduction')%>:</strong>
+  <%= @user.introduction %>
+</p>
+
+<%= link_to t('views.common.back'), :back %>

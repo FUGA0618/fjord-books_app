@@ -11,27 +11,41 @@ def picture_file(name)
 end
 
 Book.destroy_all
+User.destroy_all
 
-Book.create!(
-  title: 'Ruby超入門',
-  memo: 'Rubyの文法の基本をやさしくていねいに解説しています。',
-  author: '五十嵐 邦明',
-  picture: picture_file('cho-nyumon.jpg')
-)
+50.times do |n|
+  Book.create!(
+    title: "Ruby超入門 #{n}",
+    memo: 'Rubyの文法の基本をやさしくていねいに解説しています。',
+    author: '五十嵐 邦明',
+    picture: picture_file('cho-nyumon.jpg')
+  )
 
-Book.create!(
-  title: 'チェリー本',
-  memo: 'プログラミング経験者のためのRuby入門書です。',
-  author: '伊藤 淳一',
-  picture: picture_file('cherry-book.jpg')
-)
+  Book.create!(
+    title: "チェリー本 #{n}",
+    memo: 'プログラミング経験者のためのRuby入門書です。',
+    author: '伊藤 淳一',
+    picture: picture_file('cherry-book.jpg')
+  )
 
-Book.create!(
-  title: '楽々ERDレッスン',
-  memo: '実在する帳票から本当に使えるテーブル設計を導く画期的な本！',
-  author: '羽生 章洋',
-  picture: picture_file('erd.jpg')
-)
+  Book.create!(
+    title: "楽々ERDレッスン #{n}",
+    memo: '実在する帳票から本当に使えるテーブル設計を導く画期的な本！',
+    author: '羽生 章洋',
+    picture: picture_file('erd.jpg')
+  )
+end
+
+100.times do |n|
+  User.create!(
+    email: "sample-#{n}@example.com",
+    zip: 1_234_567,
+    address: "東京都豊島区北池袋#{n}丁目#{n}番#{n}号",
+    introduction: "#{n}回目の登録です。よろしくお願いします！",
+    password: 'password',
+    password_confirmation: 'password'
+  )
+end
 
 50.times do
   Book.create!(

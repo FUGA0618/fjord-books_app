@@ -223,8 +223,17 @@ en:
       delete_confirm: "Are you sure?"
       title_new: "New %{name}"
       title_edit: "Editing %{name}"
+      edit_profile: Edit profile
+      log_out: Logout
+      sign_up: Sign up
+      log_in: Login
   controllers:
     common:
       notice_create: "%{name} was successfully created."
       notice_update: "%{name} was successfully updated."
       notice_destroy: "%{name} was successfully destroyed."
+  title:
+    welcome: Welcome!
+  message:
+    header: "<strong>Logged in as %{email}</strong>."
+    welcome: Please sign up or log in.

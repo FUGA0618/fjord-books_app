@@ -1,3 +1,9 @@
+# 提出課題の確認方法
+1. `bundle install`を実行。
+1. `rails db:reset`を実行。
+1. `rails s`でサーバを起動。
+1. http://localhost:3000/books にアクセス。
+
 # fjord-books_app
 
 フィヨルドブートキャンプのRailsプラクティスの提出物（「Rails の i18n を理解する」以降の提出物）をまとめるリポジトリです。

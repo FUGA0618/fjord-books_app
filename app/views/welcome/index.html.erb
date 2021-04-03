@@ -1,0 +1,6 @@
+<h1><%= t('title.welcome') %></h1>
+<% if user_signed_in? %>
+  <p><%= link_to Book.model_name.human, books_path %> | <%= link_to User.model_name.human, users_path %></p>
+<% else %>
+  <p><%= t('message.welcome') %></p>
+<% end %>

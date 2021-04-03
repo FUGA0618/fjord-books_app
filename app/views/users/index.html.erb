@@ -1,0 +1,29 @@
+<h1><%= User.model_name.human %></h1>
+
+<table>
+  <thead>
+  <tr>
+    <th><%= User.human_attribute_name('id') %></th>
+    <th><%= User.human_attribute_name('email') %></th>
+    <th><%= User.human_attribute_name('zip') %></th>
+    <th><%= User.human_attribute_name('address') %></th>
+    <th><%= User.human_attribute_name('introduction') %></th>
+    <th colspan="1"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.email %></td>
+      <td><%= split_and_display_zip(user.zip) %></td>
+      <td><%= user.address %></td>
+      <td><%= user.introduction %></td>
+      <td><%= link_to t('views.common.show'), user %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @users %>
