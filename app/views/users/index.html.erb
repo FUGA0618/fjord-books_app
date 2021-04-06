@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th><%= User.human_attribute_name(:user_icon) %></th>
       <th><%= User.human_attribute_name(:email) %></th>
       <th><%= User.human_attribute_name(:name) %></th>
       <th><%= User.human_attribute_name(:postal_code) %></th>
@@ -14,6 +15,9 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td>
+          <% if user.user_icon.attached? %><%= image_tag user.user_icon %><% end %>
+        </td>
         <td><%= user.email %></td>
         <td><%= user.name %></td>
         <td><%= user.postal_code %></td>
