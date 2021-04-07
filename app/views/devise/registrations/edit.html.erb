@@ -14,13 +14,11 @@
 
   <%= render 'devise/registrations/profile_fields', f: f %>
 
-  <% if @user.user_icon.attached? %>
-    <% if @user.user_icon.variable? %>
-      <p>
-        現在の<%= User.human_attribute_name(:user_icon) %>：<br>
-        <%= image_tag @user.user_icon.variant(resize: "200") %>
-      </p>
-    <% end %>
+  <% if @user.user_icon.attached? && @user.user_icon.variable? %>
+    <p>
+      現在の<%= User.human_attribute_name(:user_icon) %>：<br>
+      <%= image_tag @user.user_icon.variant(resize: "200") %>
+    </p>
   <% end %>
 
   <div class="field">
