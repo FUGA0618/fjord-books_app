@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @users.with_attached_user_icon.each do |user| %>
       <tr>
         <td>
           <% if user.user_icon.attached? %><%= image_tag user.user_icon.variant(resize: "100x100") %><% end %>
