@@ -1,0 +1,25 @@
+<h1>フォロー一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @following_users.each do |user| %>
+      <tr>
+        <th>
+          <% if user.avatar.attached? %>
+            <%= image_tag user.avatar.variant(resize_to_fill: [30, 30]) %>
+          <% end %>
+        </th>
+        <td><%= link_to user.name, user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @following_users %>
