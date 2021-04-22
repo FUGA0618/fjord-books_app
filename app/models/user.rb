@@ -6,12 +6,12 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[github]
 
   has_many :active_relationships,
-           class_name: :Relationship,
+           class_name: :FollowRelationship,
            inverse_of: :follower,
            foreign_key: :follower_id,
            dependent: :destroy
   has_many :passive_relationships,
-           class_name: :Relationship,
+           class_name: :FollowRelationship,
            inverse_of: :followed,
            foreign_key: :followed_id,
            dependent: :destroy

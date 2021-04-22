@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :followings, only: %i(index), module: :users
     resources :followers, only: %i(index), module: :users
   end
-  resources :relationships, only: %i(create destroy)
+  resources :follow_relationships, only: %i(create destroy)
 end
