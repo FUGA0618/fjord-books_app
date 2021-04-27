@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class CommentsController < ApplicationController
+  before_action :set_comment, only: %i[edit update destroy]
   before_action :set_commentable
+
+  def edit; end
 
   def create
     @comment = @commentable.comments.new(comment_params)
@@ -17,9 +20,16 @@ class CommentsController < ApplicationController
 
   def update; end
 
-  def destroy; end
+  def destroy
+    @comment.destroy
+    redirect_to @commentable, notice: '削除しました'
+  end
 
   private
+
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
   def set_commentable
     resource, id = request.path.split('/')[1, 2]

@@ -13,6 +13,8 @@
       <%= comment.comment %>
     </p>
 
+    <%= link_to '削除', [commentable, comment], method: :delete, data: { confirm: '削除してよろしいですか？' } %>
+
     <hr>
   <% end %>
 <% end %>
