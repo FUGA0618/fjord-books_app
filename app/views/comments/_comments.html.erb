@@ -5,11 +5,17 @@
 <% else %>
   <% commentable.comments.order(:id).each do |comment| %>
     <p>
-      投稿者：
+      <%= Comment.human_attribute_name(:created_at) %>：
+      <%= comment.created_at %>
+    </p>
+
+    <p>
+      <%= Comment.human_attribute_name(:author) %>：
       <%= link_to comment.user.name, comment.user %>
     </p>
+
     <p>
-      内容：<br>
+      <%= Comment.human_attribute_name(:comment) %>：<br>
       <%= comment.comment %>
     </p>
 
