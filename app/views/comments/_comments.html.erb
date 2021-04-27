@@ -11,7 +11,7 @@
 
     <p>
       <%= Comment.human_attribute_name(:author) %>：
-      <%= link_to comment.user.name, comment.user %>
+      <%= link_to comment.user.name.presence || comment.user.email, comment.user %>
     </p>
 
     <p>
