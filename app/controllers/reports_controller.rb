@@ -2,6 +2,7 @@
 
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[show edit update destroy]
+  before_action :valid_author, only: %i[edit update destroy]
 
   # GET /reports
   def index
@@ -50,6 +51,10 @@ class ReportsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_report
     @report = Report.find(params[:id])
+  end
+
+  def valid_author
+    redirect_to reports_path, notice: t('controllers.common.invalid') unless @report.user == current_user
   end
 
   # Only allow a list of trusted parameters through.

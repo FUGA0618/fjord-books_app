@@ -8,5 +8,7 @@
   <%= @report.body %>
 </p>
 
-<%= link_to 'Edit', edit_report_path(@report) %> |
+<% if @report.created_by?(current_user) %>
+  <%= link_to 'Edit', edit_report_path(@report) %> |
+<% end %>
 <%= link_to 'Back', reports_path %>
