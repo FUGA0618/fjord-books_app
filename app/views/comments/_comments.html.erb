@@ -1,7 +1,7 @@
-<h2>Comments</h2>
+<h2><%= Comment.model_name.human %></h2>
 
 <% if commentable.comments.count.zero? %>
-  <p>まだコメントはありません。</p>
+  <p>まだ<%= Comment.model_name.human %>はありません。</p>
 <% else %>
   <% commentable.comments.order(:id).each do |comment| %>
     <p>
@@ -15,8 +15,8 @@
 
     <% if comment.created_by?(current_user) %>
       <p>
-        <%= link_to '編集', [:edit, commentable, comment] %> |
-        <%= link_to '削除', [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+        <%= link_to t('views.common.edit'), [:edit, commentable, comment] %> |
+        <%= link_to t('views.common.destroy'), [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
       </p>
     <% end %>
 

@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
 
     if @comment.save
-      redirect_to @commentable, notice: 'コメントしました'
+      redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       resource = request.path.split('/')[1]
       eval("@#{resource.singularize} = @commentable") # rubocop:disable all
@@ -29,7 +29,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to @commentable, notice: '削除しました'
+    redirect_to @commentable, notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
 
   private
@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
   end
 
   def valid_author
-    redirect_to @commentable, notice: '不正なパラメータです' unless @comment.user == current_user
+    redirect_to @commentable, notice: t('controllers.common.notice_invalid') unless @comment.user == current_user
   end
 
   def comment_params
