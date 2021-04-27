@@ -1,0 +1,20 @@
+<h2>Comments</h2>
+
+<% if commentable.comments.count.zero? %>
+  <p>まだコメントはありません。</p>
+<% else %>
+  <% commentable.comments.order(:id).each do |comment| %>
+    <p>
+      投稿者：
+      <%= link_to comment.user.name, comment.user %>
+    </p>
+    <p>
+      内容：<br>
+      <%= comment.comment %>
+    </p>
+
+    <hr>
+  <% end %>
+<% end %>
+
+<%= render 'comments/form', commentable: commentable %>
