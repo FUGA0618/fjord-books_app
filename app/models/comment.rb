@@ -6,4 +6,8 @@ class Comment < ApplicationRecord
 
   validates :comment, :comment, presence: true
   validates :comment, :user_id, presence: true
+
+  def created_by?(user)
+    self.user == user
+  end
 end

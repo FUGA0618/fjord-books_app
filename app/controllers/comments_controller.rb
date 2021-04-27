@@ -3,6 +3,7 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: %i[edit update destroy]
   before_action :set_commentable
+  before_action :valid_author, only: %i[edit update destroy]
 
   def edit; end
 
@@ -40,6 +41,10 @@ class CommentsController < ApplicationController
   def set_commentable
     resource, id = request.path.split('/')[1, 2]
     @commentable = resource.singularize.classify.constantize.find(id)
+  end
+
+  def valid_author
+    redirect_to @commentable, notice: '不正なパラメータです' unless @comment.user == current_user
   end
 
   def comment_params

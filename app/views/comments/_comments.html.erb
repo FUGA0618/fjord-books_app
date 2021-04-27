@@ -13,10 +13,12 @@
       <%= comment.comment %>
     </p>
 
-    <p>
-      <%= link_to '編集', [:edit, commentable, comment] %> |
-      <%= link_to '削除', [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
-    </p>
+    <% if comment.created_by?(current_user) %>
+      <p>
+        <%= link_to '編集', [:edit, commentable, comment] %> |
+        <%= link_to '削除', [commentable, comment], method: :delete, data: { confirm: t('views.common.delete_confirm') } %>
+      </p>
+    <% end %>
 
     <hr>
   <% end %>
