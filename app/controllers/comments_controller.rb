@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
     else
       resource = request.path.split('/')[1]
-      eval("@#{resource.singularize} = @commentable") # rubocop:disable all
+      instance_variable_set("@#{resource.singularize}", @commentable)
       render "#{resource}/show"
     end
   end
