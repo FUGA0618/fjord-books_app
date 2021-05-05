@@ -4,10 +4,9 @@ require 'application_system_test_case'
 
 class BooksTest < ApplicationSystemTestCase
   setup do
-    visit root_url
-    fill_in 'Eメール', with: 'alice@example.com'
-    fill_in 'パスワード', with: 'password'
-    click_on 'ログイン'
+    @user = create(:alice)
+    @book = create(:jojo)
+    sign_in_as @user
   end
 
   test 'visiting the index' do
