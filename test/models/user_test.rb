@@ -29,9 +29,12 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test '#unfollow' do
-    @alice.follow(@bob)
-    assert @alice.following?(@bob)
-    @alice.unfollow(@bob)
-    assert_not @alice.following?(@bob)
+    relationship = create(:relationship)
+    carol = relationship.following
+    dave = relationship.follower
+
+    assert dave.following?(carol)
+    dave.unfollow(carol)
+    assert_not dave.following?(carol)
   end
 end
